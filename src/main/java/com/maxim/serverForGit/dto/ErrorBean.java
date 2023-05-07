@@ -1,4 +1,4 @@
-package com.shelly.coupons.dto;
+package com.maxim.serverForGit.dto;
 
 public class ErrorBean {
     private int errorCode;

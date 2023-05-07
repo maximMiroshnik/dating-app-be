@@ -1,5 +1,7 @@
 package com.maxim.serverForGit.entities;
 
+import com.maxim.serverForGit.enums.Gender;
+
 import javax.persistence.*;
 
 /**
@@ -26,15 +28,15 @@ public class User {
     private String city;
 
     @Column(name = "gender", nullable = false)
-    private String gender;
+    private Gender gender;
 
     @Column(name = "seekedGender", nullable = false)
-    private String seekedGender;
+    private Gender seekedGender;
 
-    @Column(name = "bio", nullable = false)
+    @Column(name = "bio", nullable = true)
     private String bio;
 
-    public User(long id, String userName, String password, int age, String city, String sex, String interestedSex, String bio) {
+    public User(long id, String userName, String password, int age, String city, Gender gender, Gender seekedGender, String bio) {
         this.id = id;
         this.userName = userName;
         this.password = password;
@@ -85,19 +87,19 @@ public class User {
         this.city = city;
     }
 
-    public String getGender() {
+    public Gender getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(Gender gender) {
         this.gender = gender;
     }
 
-    public String getSeekedGender() {
+    public Gender getSeekedGender() {
         return seekedGender;
     }
 
-    public void setSeekedGender(String seekedGender) {
+    public void setSeekedGender(Gender seekedGender) {
         this.seekedGender = seekedGender;
     }
 

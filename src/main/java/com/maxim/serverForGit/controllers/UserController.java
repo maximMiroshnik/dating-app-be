@@ -8,8 +8,9 @@ import com.maxim.serverForGit.logic.UserLogic;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import com.maxim.serverForGit.exceptions.ServerException;
 
-import java.rmi.ServerException;
+
 import java.util.List;
 
 /**
@@ -56,8 +57,8 @@ public class UserController {
         userLogic.deleteAllUsers();
     }
 
-    @DeleteMapping("{id}")
-    public void deleteUserById(@PathVariable long id) {
-        userLogic.deleteUserById(id);
+    @DeleteMapping("{userId}")
+    public void removeUser(@PathVariable("userId") int userId) throws ServerException {
+        this.userLogic.deleteUser(userId);
     }
 }

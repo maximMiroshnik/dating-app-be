@@ -1,2 +1,6 @@
-package com.maxim.serverForGit.enums;public enum Gender {
+package com.maxim.serverForGit.enums;
+
+public enum Gender {
+    FEMALE,
+    MALE
 }

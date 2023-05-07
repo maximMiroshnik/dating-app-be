@@ -3,6 +3,8 @@ package com.maxim.serverForGit.logic;
 import com.maxim.serverForGit.dal.IUserDal;
 import com.maxim.serverForGit.dto.UsersDTO;
 import com.maxim.serverForGit.entities.User;
+import com.maxim.serverForGit.enums.ErrorType;
+import com.maxim.serverForGit.exceptions.ServerException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -38,9 +40,24 @@ public class UserLogic {
          userDal.deleteAll();
     }
 
+    public long createUser(User user) throws ServerException {
+        // Validations
+        try {
+            userDal.save(user);
+            return user.getId();
+        }
+        catch (Exception e){
+            throw new ServerException(ErrorType.GENERAL_ERROR,"Failed to create user"+user.toString(),e);
+        }
+    }
 
-    public long createUser(User user) {
-        userDal.save(user);
-        return user.getId();
+
+    public void deleteUser(long id) throws ServerException {
+        try {
+            userDal.deleteById(id);
+        }
+        catch (Exception e){
+            throw new ServerException(ErrorType.GENERAL_ERROR,"Failed to remove user id: "+id,e);
+        }
     }
 }

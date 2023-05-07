@@ -1,9 +1,9 @@
-package com.shelly.coupons.exceptions;
+package com.maxim.serverForGit.exceptions;
 
 
-import com.shelly.coupons.dto.ErrorBean;
-import com.shelly.coupons.enums.ErrorType;
-import com.shelly.coupons.exceptions.ServerException;
+
+import com.maxim.serverForGit.dto.ErrorBean;
+import com.maxim.serverForGit.enums.ErrorType;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestControllerAdvice;

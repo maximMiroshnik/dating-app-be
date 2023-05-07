@@ -1,4 +1,4 @@
-package com.shelly.coupons.enums;
+package com.maxim.serverForGit.enums;
 
 public enum ErrorType {
         INVALID_PRICE(1, "Please enter a valid price", false),

@@ -1,5 +1,7 @@
-package com.shelly.coupons.exceptions;
-import com.shelly.coupons.enums.ErrorType;
+package com.maxim.serverForGit.exceptions;
+
+import com.maxim.serverForGit.enums.ErrorType;
+
 public class ServerException extends Exception{
         private ErrorType errorType;
 
