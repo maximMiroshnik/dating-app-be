@@ -19,19 +19,19 @@ public class User {
     @Column(name = "password", nullable = false)
     private String password;
 
-    @Column(name = "age", nullable = true)
+    @Column(name = "age", nullable = false)
     private int age;
 
-    @Column(name = "city", nullable = true)
+    @Column(name = "city", nullable = false)
     private String city;
 
-    @Column(name = "gender", nullable = true)
+    @Column(name = "gender", nullable = false)
     private String gender;
 
-    @Column(name = "seekedGender", nullable = true)
+    @Column(name = "seekedGender", nullable = false)
     private String seekedGender;
 
-    @Column(name = "bio", nullable = true)
+    @Column(name = "bio", nullable = false)
     private String bio;
 
     public User(long id, String userName, String password, int age, String city, String sex, String interestedSex, String bio) {

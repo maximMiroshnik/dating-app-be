@@ -16,7 +16,7 @@ import java.util.List;
  * @author Maxim Myroshnyk
  * @date 5/7/2023 6:54 PM
  */
-@Controller
+@RestController
 @RequestMapping("/users")
 public class UserController {
     private UserLogic userLogic;
@@ -46,7 +46,7 @@ public class UserController {
         return userLogic.getAllUsers();
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public UsersDTO getUserById(@PathVariable long id) {
         return userLogic.getUserById(id);
     }
